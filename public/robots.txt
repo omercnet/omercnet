@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://omer.cohen.io/sitemap-index.xml

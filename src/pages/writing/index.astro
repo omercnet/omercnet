@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPublishedWriting } from "../../lib/writing";
+
+const posts = await getPublishedWriting();
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat("en", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(date);
+---
+
+<BaseLayout
+  title="Writing — Omer Cohen"
+  description="Writing by Omer Cohen on identity, security, incident response, and agents."
+  type="website"
+>
+  <header class="page-header">
+    <a class="back-link" href="/">Omer Cohen</a>
+    <h1>Writing</h1>
+    <p>Notes on identity, security, incident response, agents, and the work around them.</p>
+  </header>
+
+  <section class="writing-index" aria-labelledby="writing-index-heading">
+    <div class="section-heading">
+      <h2 id="writing-index-heading">All posts</h2>
+      <a href="/rss.xml">RSS</a>
+    </div>
+    {posts.length > 0 ? (
+        <ol class="writing-list">
+          {posts.map((post) => (
+            <li>
+              <time datetime={post.data.publishedAt.toISOString()}>
+                {formatDate(post.data.publishedAt)}
+              </time>
+              <span class="writing-list__entry">
+                <a href={`/writing/${post.id}/`}>{post.data.title}</a>
+                <span>{post.data.description}</span>
+              </span>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <p class="empty-state">Nothing published yet.</p>
+      )}
+  </section>
+</BaseLayout>

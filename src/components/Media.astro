@@ -1,0 +1,49 @@
+---
+const items = [
+  {
+    year: "2026",
+    source: "Security Boulevard · Article",
+    title: "Agentic AI doesn’t eliminate humans. It moves them to the only place that matters.",
+    href: "https://securityboulevard.com/2026/09/agentic-ai-doesnt-eliminate-humans-it-moves-them-to-the-only-place-that-matters/",
+  },
+  {
+    year: "2026",
+    source: "InformationWeek · Podcast",
+    title: "Handling vendor-triggered compliance issues",
+    href: "https://www.informationweek.com/it-leadership/informationweek-podcast-handling-vendor-triggered-compliance-issues",
+  },
+  {
+    year: "2025",
+    source: "SC Media · Article",
+    title: "Stop treating core security features like SSO as premium luxuries",
+    href: "https://www.scworld.com/perspective/stop-treating-core-security-features-like-sso-as-premium-luxuries",
+  },
+  {
+    year: "2024",
+    source: "Help Net Security · Interview",
+    title: "Reducing credential complexity with identity federation",
+    href: "https://www.helpnetsecurity.com/2024/10/01/omer-cohen-descope-identity-federation/",
+  },
+  {
+    year: "2023",
+    source: "Dark Reading · Article",
+    title: "4 pillars for building a responsible cybersecurity disclosure program",
+    href: "https://www.darkreading.com/cyber-risk/4-pillars-for-building-a-responsible-cybersecurity-disclosure-program",
+  },
+];
+---
+
+<section aria-labelledby="media-heading">
+  <h2 id="media-heading">Elsewhere</h2>
+  <ol class="media">
+    {items.map(({ year, source, title, href }) => (
+        <li>
+          <span class="media__year">{year}</span>
+          <span class="media__entry">
+            <span class="media__source">{source}</span>
+            <a class="media__title" href={href}>{title}</a>
+          </span>
+        </li>
+      ))}
+  </ol>
+</section>

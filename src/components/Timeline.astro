@@ -1,0 +1,45 @@
+---
+const entries = [
+  { year: "2022–", role: "Descope, CSO", current: true },
+  { year: "2021", role: "Mitiga, VP Incident Response" },
+  {
+    year: "2018",
+    role: "Demisto, Customer Success, EMEA and APAC",
+    note: "through the Palo Alto Networks acquisition",
+  },
+  { year: "2017", role: "A year around the world", note: "11 countries" },
+  { year: "2016", role: "Cellcom, built the incident response team" },
+  { year: "2015", role: "Yahoo, Incident Response Team Lead" },
+  {
+    year: "2013",
+    role: "General Motors, Vehicle Cyber Security",
+    note: "and the CAN bus patent",
+  },
+  { year: "2012", role: "IOActive, Security Consultant", note: "Seattle" },
+  {
+    year: "2011",
+    role: "Founded IL-CERT",
+    note: "volunteer",
+  },
+  {
+    year: "2008",
+    role: "eBay, Founding Member of the Security Event Response Team",
+  },
+  { year: "2005", role: "Unit 9900, Information Security Team Lead" },
+];
+---
+
+<section aria-labelledby="timeline-heading">
+  <h2 id="timeline-heading">Timeline</h2>
+  <ol class="log">
+    {entries.map(({ year, role, note, current }) => (
+        <li>
+          <span class:list={["log__year", { "log__year--current": current }]}>{year}</span>
+          <span class="log__description">
+            {role}
+            {note && <span class="log__note"> {note}</span>}
+          </span>
+        </li>
+      ))}
+  </ol>
+</section>

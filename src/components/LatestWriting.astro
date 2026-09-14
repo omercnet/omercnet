@@ -1,0 +1,30 @@
+---
+import { getPublishedWriting } from "../lib/writing";
+
+const posts = (await getPublishedWriting()).slice(0, 3);
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat("en", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(date);
+---
+
+{posts.length > 0 && (
+    <section aria-labelledby="latest-writing-heading">
+      <h2 id="latest-writing-heading">Latest writing</h2>
+      <ol class="writing-list writing-list--home">
+        {posts.map((post) => (
+          <li>
+            <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
+            <span class="writing-list__entry">
+              <a href={`/writing/${post.id}/`}>{post.data.title}</a>
+              <span>{post.data.description}</span>
+            </span>
+          </li>
+        ))}
+      </ol>
+      <a class="section-more" href="/writing/">All writing</a>
+    </section>
+  )}
