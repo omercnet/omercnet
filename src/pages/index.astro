@@ -1,0 +1,82 @@
+---
+import LatestWriting from "../components/LatestWriting.astro";
+import Media from "../components/Media.astro";
+import Projects from "../components/Projects.astro";
+import Timeline from "../components/Timeline.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const description =
+  "Omer Cohen. CSO at Descope. Incident response since 2008. IL-CERT, BSidesTLV, and open source.";
+---
+
+<BaseLayout title="Omer Cohen" description={description}>
+  <header class="hero">
+    <p class="hero__name">Omer Cohen <span aria-hidden="true">🐈</span></p>
+    <h1>Most breaches start with a login. I work on the <em>login.</em></h1>
+    <p class="hero__sub">
+      Chief Security Officer at <a href="https://www.descope.com">Descope</a>.
+    </p>
+  </header>
+
+  <section aria-labelledby="work-heading">
+    <h2 id="work-heading">What I work on</h2>
+    <p>
+      Identity for humans and machines: OAuth and OIDC, FAPI 2.0, token exchange, DPoP, workload
+      identity federation, and what “authorized” should mean when the caller is an agent.
+    </p>
+    <p>
+      At Descope I built the security and compliance program from zero: SOC 2 Type II, ISO 27001,
+      HIPAA, PCI DSS, CSA STAR Level 2, and FedRAMP High in under six months. Led the{" "}
+      <a href="https://www.descope.com/blog/post/noauth">nOAuth disclosure</a>, an Entra ID
+      misconfiguration that allowed account takeover across thousands of SaaS apps. Hold a US patent
+      on CAN bus intrusion detection.
+    </p>
+  </section>
+  <LatestWriting />
+
+  <Timeline />
+  <Projects />
+  <Media />
+
+  <section aria-labelledby="community-heading">
+    <h2 id="community-heading">Talks and community</h2>
+    <p>
+      DEF CON, Black Hat Asia, DefCamp, Agent Conference NYC, and whatever BSidesTLV needs that
+      year. Former volunteer EMT with Magen David Adom.
+    </p>
+  </section>
+
+  <section aria-labelledby="off-clock-heading">
+    <h2 id="off-clock-heading">Off the clock</h2>
+    <p>
+      Off the clock I fly. Private pilot, current, and a cockpit is the one place nobody can page
+      you. Before that it was 996 skydives with a camera on my helmet, and a few years on sport
+      bikes. Married, two kids, one cat.
+    </p>
+  </section>
+
+  <section aria-labelledby="advisory-heading">
+    <h2 id="advisory-heading">Advisory</h2>
+    <p>
+      I take on a handful of advisory and incident response engagements a year. If you have
+      something worth a conversation,{" "}
+      <a href="mailto:hi@omer.io">email me</a>.
+    </p>
+  </section>
+
+  <footer>
+    <ul class="links" aria-label="Profiles and contact">
+      <li><a href="/writing/">Writing</a></li>
+      <li><a href="/rss.xml">RSS</a></li>
+      <li><a href="https://github.com/omercnet" rel="me">GitHub</a></li>
+      <li><a href="https://github.com/tektum" rel="me">Tektum</a></li>
+      <li>
+        <a href="https://www.linkedin.com/in/omercohen" rel="me">LinkedIn</a>
+      </li>
+      <li>
+        <a href="https://www.descope.com/blog/author/omer-cohen">Descope blog</a>
+      </li>
+      <li><a href="mailto:hi@omer.io">hi@omer.io</a></li>
+    </ul>
+  </footer>
+</BaseLayout>
