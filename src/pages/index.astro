@@ -2,11 +2,10 @@
 import LatestWriting from "../components/LatestWriting.astro";
 import Media from "../components/Media.astro";
 import Projects from "../components/Projects.astro";
-import Timeline from "../components/Timeline.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const description =
-  "Omer Cohen. CSO at Descope. Incident response since 2008. IL-CERT, BSidesTLV, and open source.";
+  "Omer Cohen, Chief Security Officer at Descope, writing about identity, security, and AI agents.";
 ---
 
 <BaseLayout title="Omer Cohen" description={description}>
@@ -31,10 +30,12 @@ const description =
       misconfiguration that allowed account takeover across thousands of SaaS apps. Hold a US patent
       on CAN bus intrusion detection.
     </p>
+    <a class="section-more" href="https://www.linkedin.com/in/omercohen" rel="me">
+      Work history on LinkedIn
+    </a>
   </section>
   <LatestWriting />
 
-  <Timeline />
   <Projects />
   <Media />
 

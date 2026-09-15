@@ -176,43 +176,12 @@
     font-size: 1.05rem;
   }
 
-  .log,
   .media,
   .repos,
   .writing-list,
   .links {
     padding: 0;
     list-style: none;
-  }
-
-  .log li {
-    display: grid;
-    grid-template-columns: 4.75rem minmax(0, 1fr);
-    column-gap: 1.25rem;
-    padding-block: 0.6rem;
-    border-bottom: 1px solid var(--rule-strong);
-  }
-
-  .log li:last-child {
-    border-bottom: 0;
-  }
-
-  .log__year {
-    color: var(--amber);
-    font-variant-numeric: tabular-nums;
-    font-weight: 520;
-  }
-
-  .log__year--current {
-    color: var(--ink);
-  }
-
-  .log__description {
-    color: var(--ink);
-  }
-
-  .log__note {
-    color: var(--ink-muted);
   }
 
   .media li {
@@ -509,11 +478,6 @@
 
 @layer utilities {
   @media (max-width: 35rem) {
-    .log li {
-      grid-template-columns: 4rem minmax(0, 1fr);
-      column-gap: 0.75rem;
-    }
-
     .media li {
       grid-template-columns: 4rem minmax(0, 1fr);
       column-gap: 0.75rem;
